@@ -24,7 +24,7 @@ let lookPointFirst;
 let currentCamera;
 let currentLook;
 
-let chkOrbitControl = false;
+let chkOrbitControl = true;
 let chkDebug = true;
 
 const value = {
@@ -35,24 +35,29 @@ const value = {
         new THREE.Vector3( 3.73,  2.03, -7.24),
         new THREE.Vector3( 7.8,   2,    -2.8 ),
         new THREE.Vector3( 4.5,   0,     0 ),
-        // new THREE.Vector3( 4,     0,     0 ),
+        new THREE.Vector3( 4.25, -0.01,  2.28 ),
         new THREE.Vector3( 3.09, -0.69, -0.19 ),
-        // new THREE.Vector3( 2.0,  -0.7,  -0.2 ),
-        new THREE.Vector3( 1.18, -0.6, -0.14 ),
+        new THREE.Vector3( 3.09, -0.69, -0.19 ),
+        new THREE.Vector3( 1.18, -0.6,  -0.14 ),
         new THREE.Vector3( 0.74, -0.42,  0.32 ),
+        new THREE.Vector3( 0.32, -0.4,   1.85 ),
+        new THREE.Vector3( 0.67,  0,     3.23 ),
     ],
     look: [
         new THREE.Vector3(-2.2,  -0.5,   0),
         new THREE.Vector3(-1.4,  -0.5,  -1.8),
-        // new THREE.Vector3( 0.3,  -0.3,  -2.7),
         new THREE.Vector3( 2.5,  -0.3,  -2.7),
         new THREE.Vector3( 2.67,  0.53, -2.11),
+        new THREE.Vector3( 2.8,   0.15,  1.27),
         new THREE.Vector3( 2.8,   0.3,  -0.2),
-        // new THREE.Vector3( 2.6,  -0.5,  -0.2),
         new THREE.Vector3( 1.8,  -0.8,  -0.2),
-        new THREE.Vector3( 0.75,  0.4, -0.15),
-        new THREE.Vector3( 0.63,  0.7,  0.04),
+        // new THREE.Vector3( 0.75,  0.4, -0.15),
+        // new THREE.Vector3( 0.63,  0.7,  0.04),
+        new THREE.Vector3( 0.91, -0.7,  -0.36),
+        new THREE.Vector3(-0.17, -0.53, -0.5),
         new THREE.Vector3( 0.6,  -0.5,   1.12),
+        new THREE.Vector3( 1.40, -0.94,  2.10),
+        new THREE.Vector3( 0.89, -0.54,  1.66),
     ],
 }
 
@@ -73,7 +78,7 @@ const init = function () {
     scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
 
     // Camera
-    camera = new THREE.PerspectiveCamera( 40, WIDTH/HEIGHT, 1, 100 );
+    camera = new THREE.PerspectiveCamera( 40, WIDTH/HEIGHT, 0.1, 100 );
     camera.position.set(5, 3, 8);
     camera.lookAt(0, 0.5, 0);
     scene.add(camera);
@@ -81,6 +86,14 @@ const init = function () {
     // Controls
     orbitControls = new OrbitControls( camera, renderer.domElement );
     orbitControls.target.set( 0, 0.5, 0 );
+
+    // Floor
+    const floorGeomatery = new THREE.PlaneGeometry(100, 100);
+    const floorMaterial = new THREE.MeshBasicMaterial({ color: '#080808', side: THREE.DoubleSide });
+    const floorMesh = new THREE.Mesh(floorGeomatery, floorMaterial);
+    floorMesh.rotation.x = Math.PI / 2;
+    floorMesh.position.y = -1;
+    scene.add(floorMesh);
 
     // Loader
     const dracoLoader = new DRACOLoader();
