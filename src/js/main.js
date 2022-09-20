@@ -24,7 +24,7 @@ let lookPointFirst;
 let currentCamera;
 let currentLook;
 
-let chkOrbitControl = true;
+let chkOrbitControl = false;
 let chkDebug = true;
 
 const value = {
@@ -35,13 +35,16 @@ const value = {
         new THREE.Vector3( 3.73,  2.03, -7.24),
         new THREE.Vector3( 7.8,   2,    -2.8 ),
         new THREE.Vector3( 4.5,   0,     0 ),
-        new THREE.Vector3( 4.25, -0.01,  2.28 ),
+        new THREE.Vector3( 5.94, -0.46,  2.78 ),
         new THREE.Vector3( 3.09, -0.69, -0.19 ),
         new THREE.Vector3( 3.09, -0.69, -0.19 ),
         new THREE.Vector3( 1.18, -0.6,  -0.14 ),
         new THREE.Vector3( 0.74, -0.42,  0.32 ),
         new THREE.Vector3( 0.32, -0.4,   1.85 ),
-        new THREE.Vector3( 0.67,  0,     3.23 ),
+        new THREE.Vector3( 1.24, -0.73,  4.14 ),
+        new THREE.Vector3( 0.33,  0.47,  4.12 ),
+        new THREE.Vector3( 0.33,  0.47,  4.12 ),
+        new THREE.Vector3( 1.06,  2.32,  4.13 ),
     ],
     look: [
         new THREE.Vector3(-2.2,  -0.5,   0),
@@ -58,6 +61,8 @@ const value = {
         new THREE.Vector3( 0.6,  -0.5,   1.12),
         new THREE.Vector3( 1.40, -0.94,  2.10),
         new THREE.Vector3( 0.89, -0.54,  1.66),
+        new THREE.Vector3(-0.55,  0.61,  1.62),
+        new THREE.Vector3( 1.44,  2.66,  1.02),
     ],
 }
 
