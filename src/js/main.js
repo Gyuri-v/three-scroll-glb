@@ -109,12 +109,12 @@ const init = function () {
 
     // Loader
     const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath( './libs/draco/gltf/' );
+    dracoLoader.setDecoderPath( '/libs/draco/gltf/' );
 
     const gltfLoader = new GLTFLoader();
     gltfLoader.setDRACOLoader( dracoLoader );
     gltfLoader.load( 
-        './models/gltf/LittlestTokyo.glb', 
+        '/models/gltf/LittlestTokyo.glb', 
         gltf => {
             const model = gltf.scene;
             model.position.set( 1, 1, 0 );
