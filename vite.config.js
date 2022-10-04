@@ -1,5 +1,8 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-    base: '/git repo 경로/'
+    base: '/three-scroll-glb/',
+    build: {
+        chunkSizeWarningLimit: 1600,
+    },
 })
