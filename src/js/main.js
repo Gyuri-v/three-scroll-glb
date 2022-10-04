@@ -34,35 +34,42 @@ const value = {
         new THREE.Vector3( 6,     0.51, -5.92),
         new THREE.Vector3( 3.73,  2.03, -7.24),
         new THREE.Vector3( 7.8,   2,    -2.8 ),
-        new THREE.Vector3( 4.5,   0,     0 ),
+        // new THREE.Vector3( 4.5,   0,     0 ),
         new THREE.Vector3( 5.94, -0.46,  2.78 ),
         new THREE.Vector3( 3.09, -0.69, -0.19 ),
         new THREE.Vector3( 3.09, -0.69, -0.19 ),
         new THREE.Vector3( 1.18, -0.6,  -0.14 ),
-        new THREE.Vector3( 0.74, -0.42,  0.32 ),
-        new THREE.Vector3( 0.32, -0.4,   1.85 ),
+        // new THREE.Vector3( 0.74, -0.42,  0.32 ),
+        new THREE.Vector3( 0,    -0.7,   2.38 ),
         new THREE.Vector3( 1.24, -0.73,  4.14 ),
         new THREE.Vector3( 0.33,  0.47,  4.12 ),
-        new THREE.Vector3( 0.33,  0.47,  4.12 ),
-        new THREE.Vector3( 1.06,  2.32,  4.13 ),
+        new THREE.Vector3(-0.71,  0.46,  4.43),
+        new THREE.Vector3( 1.06,  2.7,   3 ),
+        new THREE.Vector3( 0.2,   1.5,   6 ),
     ],
     look: [
         new THREE.Vector3(-2.2,  -0.5,   0),
         new THREE.Vector3(-1.4,  -0.5,  -1.8),
         new THREE.Vector3( 2.5,  -0.3,  -2.7),
         new THREE.Vector3( 2.67,  0.53, -2.11),
+        new THREE.Vector3( 2.12,  1.06,  0.01),
+        new THREE.Vector3( 2.97,  0.79,  1.55),
         new THREE.Vector3( 2.8,   0.15,  1.27),
         new THREE.Vector3( 2.8,   0.3,  -0.2),
         new THREE.Vector3( 1.8,  -0.8,  -0.2),
         // new THREE.Vector3( 0.75,  0.4, -0.15),
         // new THREE.Vector3( 0.63,  0.7,  0.04),
         new THREE.Vector3( 0.91, -0.7,  -0.36),
-        new THREE.Vector3(-0.17, -0.53, -0.5),
+        new THREE.Vector3(-1.20,  0.11, -0.78),
+        // new THREE.Vector3(-1.73, -0.18, -0.60),
         new THREE.Vector3( 0.6,  -0.5,   1.12),
+        // new THREE.Vector3( 0,    -0.5,   0.67),
+        new THREE.Vector3( 0.96, -0.62,  1.90),
         new THREE.Vector3( 1.40, -0.94,  2.10),
-        new THREE.Vector3( 0.89, -0.54,  1.66),
+        // new THREE.Vector3( 0.45, -0.79,  2.35),
         new THREE.Vector3(-0.55,  0.61,  1.62),
         new THREE.Vector3( 1.44,  2.66,  1.02),
+        new THREE.Vector3( 0.2,   1.2,   1.79),
     ],
 }
 
@@ -83,7 +90,7 @@ const init = function () {
     scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
 
     // Camera
-    camera = new THREE.PerspectiveCamera( 40, WIDTH/HEIGHT, 0.1, 100 );
+    camera = new THREE.PerspectiveCamera( 70, WIDTH/HEIGHT, 0.1, 100 );
     camera.position.set(5, 3, 8);
     camera.lookAt(0, 0.5, 0);
     scene.add(camera);
